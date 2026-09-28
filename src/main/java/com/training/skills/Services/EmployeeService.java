@@ -55,6 +55,16 @@ public class EmployeeService {
                 .toList();
     }
 
+    public List<Employee> findByDepartment(Department department) {
+        List<Employee> employees = employeeRepository.findByDepartment(department);
+
+        if (employees.isEmpty()) {
+            throw new ResourceNotFoundException("No employees found.");
+        }
+
+        return employees;
+    }
+
     public double findTotalSalaryForIT() {
         return employeeRepository.findAll()
                 .stream()
