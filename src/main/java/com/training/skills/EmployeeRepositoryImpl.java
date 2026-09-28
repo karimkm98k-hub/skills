@@ -17,4 +17,12 @@ public class EmployeeRepositoryImpl implements EmployeeRepository {
     public List<Employee> findByGreaterSalary(double salary) {
         return List.of();
     }
+
+    @Override
+    public List<Employee> findByDepartment(Department department) {
+        return findAll()
+                .stream()
+                .filter(employee -> employee.getDepartment() == department)
+                .toList();
+    }
 }

@@ -13,5 +13,6 @@ import lombok.Setter;
 public class Employee {
     public String name;
     public Long salary;
+    public Department department;
 
 }

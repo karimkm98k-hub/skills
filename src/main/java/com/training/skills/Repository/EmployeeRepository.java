@@ -1,5 +1,6 @@
 package com.training.skills.Repository;
 
+import com.training.skills.Department;
 import com.training.skills.Entity.Employee;
 import org.springframework.stereotype.Repository;
 
@@ -10,4 +11,6 @@ public interface EmployeeRepository {
     List<Employee> findAll();
 
     List<Employee> findByGreaterSalary(double salary);
+
+    List<Employee> findByDepartment(Department department);
 }
